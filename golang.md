@@ -1,3 +1,5 @@
+# Go language
+
 Go, também conhecida como Golang, é uma linguagem de programação de código aberto desenvolvida pela Google em 2007, lançada em 2009. Ela foi projetada para ser eficiente, concisa, e adequada para sistemas modernos e distribuídos. Abaixo estão algumas características principais da linguagem Go, focando em como o código é estruturado e suas principais construções:
 
 1. **Sintaxe Simples e Limpa**:
