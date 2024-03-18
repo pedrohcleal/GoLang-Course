@@ -84,49 +84,97 @@ Go oferece uma variedade de operadores para realizar operações em variáveis e
 4. **Bit a Bit:** `&`, `|`, `^`, `<<`, `>>`.
 5. **Atribuição:** `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `<<=`, `>>=`, `&=`, `|=`, `^=`.
 
-### Lógica de Controle:
-Go suporta estruturas de controle de fluxo padrão, incluindo:
+## Lógica de controle em Golang
 
-1. **Condicional If-Else:**
-   ```go
-   if condição {
-       // código a ser executado se a condição for verdadeira
-   } else {
-       // código a ser executado se a condição for falsa
-   }
-   ```
+A lógica de controle em Golang define o fluxo de execução de um programa, permitindo tomar decisões e executar diferentes ações com base em condições e valores. As principais estruturas de controle da linguagem são:
 
-2. **Switch:**
-   ```go
-   switch expressao {
-   case valor1:
-       // código a ser executado se a expressão for igual a valor1
-   case valor2:
-       // código a ser executado se a expressão for igual a valor2
-   default:
-       // código a ser executado se nenhuma das condições for satisfeita
-   }
-   ```
+**1. Estruturas condicionais:**
 
-3. **Loop For:**
-   ```go
-   for inicialização; condição; pós-iteração {
-       // código a ser repetido enquanto a condição for verdadeira
-   }
-   ```
+* **if:** Permite executar um bloco de código se uma condição for verdadeira.
+* **else if:** Permite executar um bloco de código alternativo se a condição do `if` for falsa e outra condição for verdadeira.
+* **else:** Permite executar um bloco de código alternativo se todas as condições anteriores forem falsas.
+* **switch:** Permite executar um bloco de código específico com base no valor de uma variável.
 
-4. **Loop Range:**
-   ```go
-   for índice, valor := range coleção {
-       // código a ser repetido para cada elemento da coleção
-   }
-   ```
+**Exemplo:**
 
-5. **Loop Infinito:**
-   ```go
-   for {
-       // código a ser executado repetidamente em um loop infinito
-   }
-   ```
+```go
+if numero > 10 {
+  fmt.Println("O número é maior que 10")
+} else if numero == 10 {
+  fmt.Println("O número é igual a 10")
+} else {
+  fmt.Println("O número é menor que 10")
+}
 
-Esses são alguns dos conceitos básicos de tipos de dados, declaração de variáveis e constantes, operadores e lógica de controle em Go. Essas construções são fundamentais para escrever programas eficazes e eficientes em Go.
+switch numero {
+case 1:
+  fmt.Println("O número é 1")
+case 2:
+  fmt.Println("O número é 2")
+default:
+  fmt.Println("O número não é 1 nem 2")
+}
+```
+
+**2. Laços de repetição:**
+
+* **for:** Permite executar um bloco de código repetidamente enquanto uma condição for verdadeira.
+* **while:** Permite executar um bloco de código repetidamente enquanto uma condição for verdadeira.
+* **for range:** Permite iterar sobre um array, slice, map ou string.
+
+**Exemplo:**
+
+```go
+for i := 0; i < 5; i++ {
+  fmt.Println(i)
+}
+
+numero := 1
+while numero <= 5 {
+  fmt.Println(numero)
+  numero++
+}
+
+for _, letra := range "Olá, mundo!" {
+  fmt.Println(letra)
+}
+```
+
+**3. Funções:**
+
+* Permitem organizar o código em blocos reutilizáveis.
+* Recebem parâmetros e retornam valores.
+* Podem ser chamadas de outras partes do programa.
+
+**Exemplo:**
+
+```go
+func soma(a int, b int) int {
+  return a + b
+}
+
+resultado := soma(10, 20)
+fmt.Println(resultado)
+```
+
+**4. GoRoutines e canais:**
+
+* Permitem executar código concorrentemente.
+* GoRoutines são unidades de execução concorrentes.
+* Canais são usados para comunicação entre GoRoutines.
+
+**Exemplo:**
+
+```go
+go func() {
+  fmt.Println("Olá do mundo!")
+}()
+
+fmt.Println("Olá do outro lado!")
+```
+
+**Recursos para aprofundar:**
+
+* Documentação oficial da linguagem Golang: [https://golang.org/pkg/](https://golang.org/pkg/)
+* Curso sobre GoRoutines e canais: [https://gobyexample.com/](https://gobyexample.com/)
+
