@@ -1,31 +1,79 @@
 # Introdução ao Go - part1
 
-### Tipos de Dados:
-Em Go, os tipos de dados incluem tipos básicos, compostos e definidos pelo usuário. Alguns dos tipos básicos incluem:
+## Tipos de dados em Golang
 
-1. **Inteiros:** `int`, `int8`, `int16`, `int32`, `int64`, `uint`, `uint8`, `uint16`, `uint32`, `uint64`.
-2. **Ponto flutuante:** `float32`, `float64`.
-3. **Booleano:** `bool`.
-4. **String:** `string`.
-5. **Caractere:** `rune`.
-6. **Complexos:** `complex64`, `complex128`.
+Golang, conhecida por sua simplicidade e poder, oferece um conjunto de tipos de dados básicos e compostos para construir programas robustos e eficientes. Essa variedade permite armazenar e manipular diferentes tipos de informações, desde números e caracteres até estruturas complexas.
 
-Além desses, Go também possui tipos compostos, como arrays, slices, maps, structs e tipos de interface.
+**Tipos básicos:**
 
-### Declaração de Variáveis e Constantes:
-Em Go, a declaração de variáveis segue a seguinte sintaxe:
+* **Numéricos:**
+    * **Inteiros:** int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64
+    * **Ponto flutuante:** float32, float64
+    * **Booleano:** bool
+* **Texto:** string
+* **Caractere:** byte, rune
+
+**Tipos compostos:**
+
+* **Array:** fatia ordenada de um tipo específico
+* **Slice:** fatia referenciável e mutável de um array
+* **Map:** coleção não ordenada de pares chave-valor
+* **Struct:** tipo definido pelo usuário com campos nomeados
+* **Interface:** tipo abstrato que define um conjunto de métodos
+
+**Inferência de tipos:**
+
+Golang permite a inferência de tipos, onde o tipo de uma variável é automaticamente inferido pela sua atribuição. Isso simplifica o código, mas exige cuidado para evitar erros.
+
+**Detalhes importantes:**
+
+* Os tipos básicos são tipados estaticamente, garantindo segurança de memória e evitando erros em tempo de execução.
+* Os tipos compostos oferecem flexibilidade para armazenar e organizar dados complexos.
+* A biblioteca padrão fornece diversos tipos e funções para trabalhar com dados de forma eficiente.
+
+**Exemplos:**
 
 ```go
-var nomeDaVariavel tipo // Declaração de variável
-const nomeDaConstante tipo = valor // Declaração de constante
+// Inteiro
+var numero int = 10
+
+// Ponto flutuante
+var pi float64 = 3.14
+
+// Booleano
+var verdadeiro bool = true
+
+// String
+var nome string = "Golang"
+
+// Array
+var array [5]int = [1, 2, 3, 4, 5]
+
+// Slice
+var slice []int = []int{1, 2, 3, 4, 5}
+
+// Map
+var mapa map[string]int = map[string]int{"a": 1, "b": 2}
+
+// Struct
+type Pessoa struct {
+  nome string
+  idade int
+}
+
+// Interface
+var interface interface{} = 10
 ```
 
-Exemplo:
+**Recursos para aprofundar:**
 
-```go
-var x int // Declaração de uma variável inteira
-const PI float64 = 3.14 // Declaração de uma constante
-```
+* Documentação oficial da linguagem Golang: [https://golang.org/pkg/](https://golang.org/pkg/)
+* Artigo sobre tipos de dados em Golang: [https://medium.com/@habbema/golang-dados-22e7ff5b8131](https://medium.com/@habbema/golang-dados-22e7ff5b8131)
+* Tutorial sobre tipos de dados em Golang: [https://www.digitalocean.com/community/tutorials/understanding-data-types-in-go-pt](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-go-pt)
+
+**Conclusão:**
+
+A compreensão dos tipos de dados em Golang é fundamental para escrever programas eficientes e robustos. A variedade de tipos básicos e compostos, combinada com a inferência de tipos, torna a linguagem flexível e poderosa para lidar com diferentes tipos de informações.
 
 ### Operadores:
 Go oferece uma variedade de operadores para realizar operações em variáveis e valores. Os operadores incluem:
