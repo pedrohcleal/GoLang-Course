@@ -22,7 +22,7 @@ func main() {
 	//pessoa.Walk()
 	go cont(6)
 	go cont(6)
-	cont(6)
+	go cont(6)
 }
 
 func cont(count int) {
