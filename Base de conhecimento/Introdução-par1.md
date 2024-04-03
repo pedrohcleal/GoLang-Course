@@ -178,3 +178,54 @@ fmt.Println("Olá do outro lado!")
 * Documentação oficial da linguagem Golang: [https://golang.org/pkg/](https://golang.org/pkg/)
 * Curso sobre GoRoutines e canais: [https://gobyexample.com/](https://gobyexample.com/)
 
+## Comandos
+
+Em Go, existem vários comandos úteis para compilar, executar, testar e gerenciar projetos. Aqui estão alguns dos comandos mais comuns:
+
+1. **go run**: Este comando é usado para compilar e executar um programa Go em um único passo. Por exemplo, se você tiver um arquivo chamado `meuprograma.go`, você pode executá-lo usando:
+
+   ```
+   go run meuprograma.go
+   ```
+
+   Isso compilará e executará o arquivo `meuprograma.go`.
+
+2. **go build**: O comando `go build` é usado para compilar um programa Go em um executável. Por exemplo, se você quiser compilar o arquivo `meuprograma.go` em um executável, você pode fazer isso:
+
+   ```
+   go build meuprograma.go
+   ```
+
+   Isso criará um executável chamado `meuprograma` que você pode executar.
+
+3. **go test**: Este comando é usado para executar testes automatizados em um pacote Go. Ele procura por arquivos com nomes que começam com `*_test.go` no diretório atual e nos subdiretórios e executa os testes definidos nesses arquivos. Por exemplo:
+
+   ```
+   go test
+   ```
+
+   Isso executará todos os testes no diretório atual.
+
+4. **go mod**: O comando `go mod` é usado para gerenciar módulos Go. Módulos são uma forma de organizar e versionar o código em Go, introduzidos oficialmente a partir do Go 1.11. Alguns subcomandos úteis de `go mod` incluem:
+
+   - `go mod init`: Inicializa um novo módulo Go no diretório atual.
+   - `go mod tidy`: Garante que as dependências do módulo estejam consistentes com o código fonte.
+   - `go mod vendor`: Copia as dependências do módulo para o diretório `vendor`.
+
+5. **go get**: Este comando é usado para baixar e instalar pacotes Go e suas dependências. Por exemplo:
+
+   ```
+   go get github.com/pacote/exemplo
+   ```
+
+   Isso baixará e instalará o pacote `exemplo` do GitHub.
+
+6. **go fmt**: O comando `go fmt` é usado para formatar automaticamente o código Go de acordo com as convenções de formatação do Go. Por exemplo:
+
+   ```
+   go fmt meuprograma.go
+   ```
+
+   Isso formatará o arquivo `meuprograma.go` de acordo com as convenções de formatação do Go.
+
+Esses são apenas alguns dos comandos mais comuns em Go.
