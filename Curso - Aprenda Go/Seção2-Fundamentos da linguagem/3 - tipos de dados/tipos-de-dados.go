@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	var number int8 = 10
@@ -22,10 +25,10 @@ func main() {
 	var boolean bool = true
 	fmt.Println(boolean)
 
-	var charb := "b"
+	charb := "b"
 	chara := "A"
 	fmt.Println(chara)
-	fmt.Println(byte(charb))
+	fmt.Println(charb)
 
 	var array [3]int = [3]int{1, 2, 3}
 	fmt.Println(array)
@@ -38,5 +41,8 @@ func main() {
 
 	var error error = fmt.Errorf("this is an error")
 	fmt.Println(error)
+
+	var erro2 error = errors.New("this is an error")
+	fmt.Println(erro2)
 
 }
