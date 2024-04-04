@@ -178,6 +178,39 @@ fmt.Println("Olá do outro lado!")
 * Documentação oficial da linguagem Golang: [https://golang.org/pkg/](https://golang.org/pkg/)
 * Curso sobre GoRoutines e canais: [https://gobyexample.com/](https://gobyexample.com/)
 
+## Funções
+
+Em Go, uma função é um bloco de código que executa uma tarefa específica. As funções em Go são definidas usando a palavra-chave `func`, seguida pelo nome da função, uma lista de parâmetros entre parênteses e, opcionalmente, um tipo de retorno. Aqui está um exemplo básico de uma função em Go:
+
+```go
+package main
+
+import "fmt"
+
+// Função que retorna a soma de dois números inteiros
+func soma(a, b int) int {
+    return a + b
+}
+
+func main() {
+    // Chamando a função soma e imprimindo o resultado
+    resultado := soma(3, 5)
+    fmt.Println("A soma é:", resultado)
+}
+```
+
+Aqui está uma explicação passo a passo do código acima:
+
+1. `package main`: Define o pacote ao qual este arquivo pertence. O pacote `main` é especial em Go e é usado para criar executáveis.
+
+2. `import "fmt"`: Importa o pacote `fmt`, que é usado para formatar a saída.
+
+3. `func soma(a, b int) int { ... }`: Define uma função chamada `soma` que aceita dois parâmetros inteiros (`a` e `b`) e retorna um resultado do tipo `int`. Dentro do corpo da função, `return a + b` retorna a soma dos dois parâmetros.
+
+4. `func main() { ... }`: Define a função `main`, que é o ponto de entrada para o programa. Dentro desta função, chamamos a função `soma` com os argumentos `3` e `5` e armazenamos o resultado em `resultado`. Em seguida, imprimimos o resultado usando `fmt.Println`.
+
+Este é apenas um exemplo simples de uma função em Go. As funções em Go podem aceitar vários parâmetros, retornar múltiplos valores e até mesmo serem utilizadas como tipos de dados em Go. Elas são uma parte fundamental da linguagem e são usadas extensivamente para organizar e reutilizar código.
+
 ## Comandos
 
 Em Go, existem vários comandos úteis para compilar, executar, testar e gerenciar projetos. Aqui estão alguns dos comandos mais comuns:
