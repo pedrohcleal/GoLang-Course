@@ -342,3 +342,51 @@ Dominar o uso de structs é essencial para escrever código Go eficiente e legí
 * **Tags em structs:** Permitem adicionar informações extras às structs, como metadados para serialização ou validação.
 
 Explorar esses tópicos avançados pode levar seu conhecimento de structs em Go para o próximo nível.
+
+## Heranças
+
+Em Go, não há conceito direto de herança como em algumas outras linguagens de programação orientada a objetos, como Java ou Python. Em vez disso, Go utiliza um modelo de composição para reutilização de código e compartilhamento de funcionalidades entre tipos.
+
+No entanto, é possível alcançar um comportamento semelhante ao da herança por meio da composição e da incorporação de tipos. Vou explicar esses conceitos:
+
+1. **Composição**: Em vez de herdar comportamentos e campos de uma classe pai, em Go, você pode criar um novo tipo incorporando ou aninhando outros tipos. Isso é chamado de composição. Por exemplo:
+
+```go
+package main
+
+import "fmt"
+
+// Definindo um tipo Pessoa
+type Pessoa struct {
+    Nome string
+    Idade int
+}
+
+// Definindo um tipo Funcionario que incorpora o tipo Pessoa
+type Funcionario struct {
+    Pessoa
+    Salario float64
+}
+
+func main() {
+    // Criando uma instância de Funcionario
+    funcionario := Funcionario{
+        Pessoa: Pessoa{
+            Nome:  "João",
+            Idade: 30,
+        },
+        Salario: 3000.00,
+    }
+
+    // Acessando campos de Pessoa e Funcionario
+    fmt.Println("Nome:", funcionario.Nome)
+    fmt.Println("Idade:", funcionario.Idade)
+    fmt.Println("Salário:", funcionario.Salario)
+}
+```
+
+No exemplo acima, `Funcionario` incorpora `Pessoa`, o que significa que todas as propriedades e métodos de `Pessoa` estão disponíveis para `Funcionario`.
+
+2. **Incorporação de Tipos**: Em Go, uma struct pode incorporar outros tipos diretamente. No exemplo anterior, `Funcionario` incorpora `Pessoa`, permitindo que `Funcionario` acesse os campos e métodos de `Pessoa`. Essa incorporação é uma técnica poderosa que permite a reutilização de código sem introduzir complexidade desnecessária.
+
+Embora Go não tenha herança no sentido clássico, o modelo de composição e incorporação de tipos oferece uma maneira eficaz de compartilhar comportamentos e dados entre tipos de uma maneira flexível e eficiente. Isso promove o princípio de design de Go de simplicidade e clareza, evitando a complexidade excessiva muitas vezes associada ao uso extensivo de herança em outras linguagens.
