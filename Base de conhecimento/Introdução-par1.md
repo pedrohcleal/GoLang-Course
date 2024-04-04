@@ -1,5 +1,57 @@
 # Introdução ao Go - part1
 
+## Comandos
+
+Em Go, existem vários comandos úteis para compilar, executar, testar e gerenciar projetos. Aqui estão alguns dos comandos mais comuns:
+
+1. **go run**: Este comando é usado para compilar e executar um programa Go em um único passo. Por exemplo, se você tiver um arquivo chamado `meuprograma.go`, você pode executá-lo usando:
+
+   ```
+   go run meuprograma.go
+   ```
+
+   Isso compilará e executará o arquivo `meuprograma.go`.
+
+2. **go build**: O comando `go build` é usado para compilar um programa Go em um executável. Por exemplo, se você quiser compilar o arquivo `meuprograma.go` em um executável, você pode fazer isso:
+
+   ```
+   go build meuprograma.go
+   ```
+
+   Isso criará um executável chamado `meuprograma` que você pode executar.
+
+3. **go test**: Este comando é usado para executar testes automatizados em um pacote Go. Ele procura por arquivos com nomes que começam com `*_test.go` no diretório atual e nos subdiretórios e executa os testes definidos nesses arquivos. Por exemplo:
+
+   ```
+   go test
+   ```
+
+   Isso executará todos os testes no diretório atual.
+
+4. **go mod**: O comando `go mod` é usado para gerenciar módulos Go. Módulos são uma forma de organizar e versionar o código em Go, introduzidos oficialmente a partir do Go 1.11. Alguns subcomandos úteis de `go mod` incluem:
+
+   - `go mod init`: Inicializa um novo módulo Go no diretório atual.
+   - `go mod tidy`: Garante que as dependências do módulo estejam consistentes com o código fonte.
+   - `go mod vendor`: Copia as dependências do módulo para o diretório `vendor`.
+
+5. **go get**: Este comando é usado para baixar e instalar pacotes Go e suas dependências. Por exemplo:
+
+   ```
+   go get github.com/pacote/exemplo
+   ```
+
+   Isso baixará e instalará o pacote `exemplo` do GitHub.
+
+6. **go fmt**: O comando `go fmt` é usado para formatar automaticamente o código Go de acordo com as convenções de formatação do Go. Por exemplo:
+
+   ```
+   go fmt meuprograma.go
+   ```
+
+   Isso formatará o arquivo `meuprograma.go` de acordo com as convenções de formatação do Go.
+
+Esses são apenas alguns dos comandos mais comuns em Go.
+
 ## Tipos de dados em Golang
 
 Golang, conhecida por sua simplicidade e poder, oferece um conjunto de tipos de dados básicos e compostos para construir programas robustos e eficientes. Essa variedade permite armazenar e manipular diferentes tipos de informações, desde números e caracteres até estruturas complexas.
@@ -211,54 +263,82 @@ Aqui está uma explicação passo a passo do código acima:
 
 Este é apenas um exemplo simples de uma função em Go. As funções em Go podem aceitar vários parâmetros, retornar múltiplos valores e até mesmo serem utilizadas como tipos de dados em Go. Elas são uma parte fundamental da linguagem e são usadas extensivamente para organizar e reutilizar código.
 
-## Comandos
+## Structs
 
-Em Go, existem vários comandos úteis para compilar, executar, testar e gerenciar projetos. Aqui estão alguns dos comandos mais comuns:
+## Structs em Go: Um guia completo
 
-1. **go run**: Este comando é usado para compilar e executar um programa Go em um único passo. Por exemplo, se você tiver um arquivo chamado `meuprograma.go`, você pode executá-lo usando:
+Structs em Go são tipos de dados compostos que permitem agrupar dados relacionados em uma única estrutura. Elas são semelhantes às classes em outras linguagens de programação.
 
-   ```
-   go run meuprograma.go
-   ```
+**Definição de structs:**
 
-   Isso compilará e executará o arquivo `meuprograma.go`.
+```go
+type nomeDaStruct struct {
+  campo1 tipoDeDado
+  campo2 tipoDeDado
+  ...
+}
+```
 
-2. **go build**: O comando `go build` é usado para compilar um programa Go em um executável. Por exemplo, se você quiser compilar o arquivo `meuprograma.go` em um executável, você pode fazer isso:
+**Elementos-chave:**
 
-   ```
-   go build meuprograma.go
-   ```
+* **Nome da struct:** Identificador único que referencia a estrutura.
+* **Campos:** Lista de variáveis com seus tipos de dados que compõem a estrutura.
 
-   Isso criará um executável chamado `meuprograma` que você pode executar.
+**Exemplos:**
 
-3. **go test**: Este comando é usado para executar testes automatizados em um pacote Go. Ele procura por arquivos com nomes que começam com `*_test.go` no diretório atual e nos subdiretórios e executa os testes definidos nesses arquivos. Por exemplo:
+1. Struct simples para representar uma pessoa:
 
-   ```
-   go test
-   ```
+```go
+type Pessoa struct {
+  Nome string
+  Idade int
+}
+```
 
-   Isso executará todos os testes no diretório atual.
+2. Struct com campos aninhados:
 
-4. **go mod**: O comando `go mod` é usado para gerenciar módulos Go. Módulos são uma forma de organizar e versionar o código em Go, introduzidos oficialmente a partir do Go 1.11. Alguns subcomandos úteis de `go mod` incluem:
+```go
+type Endereco struct {
+  Rua string
+  Numero int
+  Cidade string
+}
 
-   - `go mod init`: Inicializa um novo módulo Go no diretório atual.
-   - `go mod tidy`: Garante que as dependências do módulo estejam consistentes com o código fonte.
-   - `go mod vendor`: Copia as dependências do módulo para o diretório `vendor`.
+type Pessoa struct {
+  Nome string
+  Idade int
+  Endereco Endereco
+}
+```
 
-5. **go get**: Este comando é usado para baixar e instalar pacotes Go e suas dependências. Por exemplo:
+**Características importantes:**
 
-   ```
-   go get github.com/pacote/exemplo
-   ```
+* **Tipadas:** Structs em Go são tipadas, o que significa que você precisa especificar o tipo de dado de cada campo.
+* **Valores por valor:** Structs são passadas por valor para funções e métodos.
+* **Comparação:** Structs podem ser comparadas usando o operador `==`.
+* **Literais:** Structs podem ser inicializadas usando literais.
+* **Métodos:** É possível definir métodos para structs, que são como funções que operam em um valor específico da struct.
 
-   Isso baixará e instalará o pacote `exemplo` do GitHub.
+**Recursos para aprofundar:**
 
-6. **go fmt**: O comando `go fmt` é usado para formatar automaticamente o código Go de acordo com as convenções de formatação do Go. Por exemplo:
+* Aprenda Golang: Structs: [https://aprendagolang.com.br/2021/10/15/o-que-sao-structs-e-como-usa-las/](https://aprendagolang.com.br/2021/10/15/o-que-sao-structs-e-como-usa-las/)
+* Go por Exemplo: Structs: [URL inválido removido]
+* DigitalOcean: Definindo Structs em Go: [https://www.digitalocean.com/community/tutorials/defining-structs-in-go-pt](https://www.digitalocean.com/community/tutorials/defining-structs-in-go-pt)
+* Blog da TreinaWeb: Orientação a objetos na linguagem Go: [https://www.treinaweb.com.br/blog/orientacao-a-objetos-na-linguagem-go](https://www.treinaweb.com.br/blog/orientacao-a-objetos-na-linguagem-go)
 
-   ```
-   go fmt meuprograma.go
-   ```
+**Dicas:**
 
-   Isso formatará o arquivo `meuprograma.go` de acordo com as convenções de formatação do Go.
+* Use structs para organizar seus dados em unidades menores e mais gerenciáveis.
+* Dê nomes descritivos aos seus campos para facilitar a compreensão do código.
+* Documente suas structs com comentários para explicar o que cada campo representa.
+* Use métodos para encapsular a lógica de manipulação de dados da struct.
 
-Esses são apenas alguns dos comandos mais comuns em Go.
+Dominar o uso de structs é essencial para escrever código Go eficiente e legível.
+
+**Tópicos avançados:**
+
+* **Ponteiros para structs:** Permitem modificar o valor original da struct em uma função ou compartilhá-la eficientemente entre diferentes partes do código.
+* **Composição de structs:** Permite criar structs mais complexas combinando structs menores.
+* **Tags em structs:** Permitem adicionar informações extras às structs, como metadados para serialização ou validação.
+
+Explorar esses tópicos avançados pode levar seu conhecimento de structs em Go para o próximo nível.
