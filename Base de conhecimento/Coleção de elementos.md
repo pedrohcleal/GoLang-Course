@@ -187,3 +187,35 @@ Em Go, os slices são estruturas de dados embutidas que não possuem métodos di
    ```
 
 Embora não haja métodos nativos associados diretamente a slices em Go, essas funções embutidas fornecem uma maneira poderosa de manipular e trabalhar com slices em seus programas. Elas são fundamentais para a eficiência e conveniência ao lidar com coleções de dados dinâmicas em Go.
+
+## make()
+
+Em Go, o comando `make()` é usado principalmente para criar instâncias de tipos de dados que requerem inicialização especial, como slices, maps e channels. A sintaxe básica para `make()` é:
+
+```go
+make(tipo, tamanho, capacidade)
+```
+
+Onde:
+- `tipo`: o tipo de dado que você deseja criar. Pode ser `slice`, `map` ou `channel`.
+- `tamanho`: para slices e arrays, é o comprimento inicial do slice (ou array). Para maps, é uma estimativa do número de elementos que o map pode conter inicialmente (embora o map possa crescer automaticamente conforme necessário).
+- `capacidade`: opcional, é usado apenas para slices e especifica a capacidade inicial do slice. Isso geralmente é usado para pré-alocar memória para o slice, o que pode melhorar o desempenho se você souber aproximadamente quantos elementos o slice conterá.
+
+Exemplos de uso do `make()`:
+
+1. Criando um slice:
+   ```go
+   novoSlice := make([]int, 5, 10) // Cria um slice de inteiros com comprimento inicial de 5 e capacidade inicial de 10
+   ```
+
+2. Criando um map:
+   ```go
+   novoMap := make(map[string]int) // Cria um map com chaves do tipo string e valores do tipo int
+   ```
+
+3. Criando um channel:
+   ```go
+   novoChannel := make(chan int) // Cria um channel para comunicação entre goroutines com valores inteiros
+   ```
+
+Em resumo, `make()` é uma função útil em Go para criar e inicializar tipos de dados especiais, como slices, maps e channels, com valores iniciais específicos. Isso é útil especialmente quando você precisa de estruturas de dados dinâmicas que devem ser inicializadas de uma maneira específica.
