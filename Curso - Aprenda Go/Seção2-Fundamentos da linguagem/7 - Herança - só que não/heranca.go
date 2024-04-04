@@ -20,7 +20,7 @@ func main() {
 	fmt.Println("Hello, World!")
 
 	p1 := user{
-		name: "João",
+		name: "João",s
 		age:  20,
 	}
 
