@@ -219,3 +219,67 @@ Exemplos de uso do `make()`:
    ```
 
 Em resumo, `make()` é uma função útil em Go para criar e inicializar tipos de dados especiais, como slices, maps e channels, com valores iniciais específicos. Isso é útil especialmente quando você precisa de estruturas de dados dinâmicas que devem ser inicializadas de uma maneira específica.
+
+## map
+
+Em Go, maps são uma estrutura de dados que fornecem uma coleção não ordenada de pares chave-valor, onde cada chave é única e associada a um único valor. Maps são implementados como uma tabela de dispersão (hash table), o que permite uma busca eficiente de valores com base em suas chaves. Aqui estão algumas características importantes sobre maps em Go:
+
+1. **Declaração de um Map**: Você pode declarar um map em Go usando a seguinte sintaxe:
+   ```go
+   var nomeDoMap map[TipoDaChave]TipoDoValor
+   ```
+
+   Por exemplo:
+   ```go
+   var meuMap map[string]int
+   ```
+
+2. **Inicialização**: Maps são tipos de dados de referência em Go, o que significa que eles são inicializados com `nil` se não forem explicitamente inicializados. Você pode inicializar um map usando a função embutida `make`:
+   ```go
+   meuMap := make(map[string]int)
+   ```
+
+   Você também pode inicializar um map com valores iniciais durante a declaração:
+   ```go
+   outroMap := map[string]string{"a": "apple", "b": "banana", "c": "cherry"}
+   ```
+
+3. **Acesso a Elementos**: Você pode acessar elementos de um map usando sua chave entre colchetes:
+   ```go
+   valor := meuMap[chave]
+   ```
+
+4. **Inserção e Atualização de Elementos**: Para inserir ou atualizar um elemento em um map, basta atribuir um valor a uma chave:
+   ```go
+   meuMap[chave] = valor
+   ```
+
+5. **Remoção de Elementos**: Você pode remover um elemento de um map usando a palavra-chave `delete`:
+   ```go
+   delete(meuMap, chave)
+   ```
+
+6. **Verificação de Existência**: Você pode verificar se uma chave existe em um map usando uma atribuição múltipla:
+   ```go
+   valor, existe := meuMap[chave]
+   ```
+
+   O segundo valor retornado (`existe`) será `true` se a chave existir no map e `false` caso contrário.
+
+7. **Iteração sobre Maps**: Você pode iterar sobre todos os pares chave-valor em um map usando o loop `for` ou a função `range`:
+   ```go
+   for chave, valor := range meuMap {
+       fmt.Println(chave, valor)
+   }
+   ```
+
+8. **Comprimento do Map**: Você pode obter o número de pares chave-valor em um map usando a função embutida `len`:
+   ```go
+   tamanho := len(meuMap)
+   ```
+
+Maps são uma estrutura de dados muito útil em Go e são amplamente utilizados para mapear chaves para valores em uma variedade de situações, como armazenamento de dados, contagem de ocorrências, cacheamento e muito mais. Eles oferecem uma maneira eficiente de associar informações e realizar pesquisas rápidas com base em chaves únicas.
+
+## métodos em map
+
+
