@@ -29,6 +29,16 @@ func main() {
 	slice1 := array2[1:3]
 	fmt.Println("slice1:", slice1)
 
+	//arrays internos
+
 	slice3 := make([]int, 5, 10)
 	fmt.Println("slice3:", slice3)
+	fmt.Println("len(slice3):", len(slice3))
+	fmt.Println("cap(slice3):", cap(slice3))
+
+	slice4 := make([]int, 5)
+	fmt.Println("slice4:", slice4)
+	fmt.Println("len(slice4):", len(slice4))
+	fmt.Println("cap(slice4):", cap(slice4))
+
 }
